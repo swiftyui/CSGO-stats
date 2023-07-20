@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "687128414189",
+    "project_id": "csgo-stats-ea61f",
+    "storage_bucket": "csgo-stats-ea61f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687128414189:android:2653226fec55e742b249e4",
+        "android_client_info": {
+          "package_name": "com.vanzylarno.csgoStats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687128414189-7sao7prcki4cfi1laj7kjrmlq70823b8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNqkAlGXjW9v5cRFnIBlKQOGsWnYrR93k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687128414189-7sao7prcki4cfi1laj7kjrmlq70823b8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
