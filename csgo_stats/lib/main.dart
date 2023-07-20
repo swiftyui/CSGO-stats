@@ -41,7 +41,7 @@ Future _setupFirebase() async {
   // Initialize the Firebase App
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-    name: 'choc-entelect',
+    name: 'csgo-stats-ea61f',
   );
 
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -64,7 +64,7 @@ Future _setupFirebase() async {
     'https://identitytoolkit.googleapis.com/',
     AppOptions(
       credential: accountCredential,
-      projectId: 'choc-entelect',
+      projectId: 'csgo-stats-ea61f',
     ),
   );
 
