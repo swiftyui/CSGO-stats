@@ -18,7 +18,7 @@ class ThemeCubit extends Cubit<ThemeData> {
     brightness: Brightness.light,
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
-      primary: Color.fromARGB(255, 1, 26, 58),
+      primary: Color.fromARGB(255, 233, 81, 0),
       onPrimary: Color.fromARGB(255, 255, 255, 255),
       secondary: Color.fromRGBO(0, 92, 108, 1),
       onSecondary: Color.fromRGBO(255, 255, 255, 1),
@@ -31,69 +31,69 @@ class ThemeCubit extends Cubit<ThemeData> {
     ),
     textTheme: TextTheme(
       bodySmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       bodyMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       // Body Large is used for the markdown pages paragraphs
       bodyLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
         fontSize: 15,
       ),
       displayLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       displayMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       displaySmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       // Used for the markdown pages title
       headlineLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
         fontSize: 35,
         fontWeight: FontWeight.bold,
       ),
       headlineMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       headlineSmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
         fontSize: 17.0,
         fontWeight: FontWeight.bold,
       ),
       titleLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       titleMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
       titleSmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.black,
         wordSpacing: 0,
       ),
@@ -112,69 +112,69 @@ class ThemeCubit extends Cubit<ThemeData> {
     ),
     textTheme: TextTheme(
       bodySmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       bodyMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       // Body Large is used for the markdown pages paragraphs
       bodyLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
         fontSize: 15,
       ),
       displayLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       displayMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       displaySmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       // Used for the markdown pages title
       headlineLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
         fontSize: 22,
         fontWeight: FontWeight.bold,
       ),
       headlineMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       headlineSmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
         fontSize: 17.0,
         fontWeight: FontWeight.bold,
       ),
       titleLarge: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       titleMedium: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),
       titleSmall: GoogleFonts.getFont(
-        "Montserrat Alternates",
+        "Raleway",
         color: Colors.white,
         wordSpacing: 0,
       ),

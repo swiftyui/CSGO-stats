@@ -13,7 +13,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CHOC - An Entelect Project'),
+        title: const Text('CS:GO Stats'),
+        centerTitle: false,
       ),
       body: Center(
         child: Column(
