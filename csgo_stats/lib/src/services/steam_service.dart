@@ -85,6 +85,7 @@ class SteamService {
             isDismissible: true,
             useSafeArea: true,
             enableDrag: true,
+            backgroundColor: Colors.transparent,
             context: navigatorKey.currentContext!,
             builder: (context) => Container(
               width: MediaQuery.of(context).size.width,

@@ -1,5 +1,6 @@
 import 'package:csgo_stats/src/blocs/steam_user_bloc/steam_user_bloc.dart';
 import 'package:csgo_stats/src/views/home_screen/steam_user_details/user_details.dart';
+import 'package:csgo_stats/src/views/home_screen/user_stats/user_stats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,16 +19,20 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('CS:GO Stats'),
         centerTitle: false,
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            BlocProvider(
+      extendBodyBehindAppBar: false,
+      body: Column(
+        children: [
+          BlocProvider(
+            create: (context) => SteamUserBloc(),
+            child: const UserDetails(),
+          ),
+          Expanded(
+            child: BlocProvider(
               create: (context) => SteamUserBloc(),
-              child: const UserDetails(),
+              child: const UserStats(),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
