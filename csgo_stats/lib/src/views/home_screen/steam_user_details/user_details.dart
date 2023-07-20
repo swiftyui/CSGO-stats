@@ -28,7 +28,7 @@ class _UserDetailsState extends State<UserDetails> {
       } else if (state is SteamUserLoading) {
         return const LoadingSteamUser();
       } else if (state is SteamUserLoaded) {
-        return const UserLoaded();
+        return UserLoaded(steamUser: state.steamUser);
       } else if (state is SteamUserError) {
         return const InitialSteamUser();
       } else {

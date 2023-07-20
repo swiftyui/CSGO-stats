@@ -1,8 +1,13 @@
+import 'package:csgo_stats/src/models/steam_user.dart';
 import 'package:csgo_stats/src/views/home_screen/steam_user_details/steam_user_avatar.dart';
 import 'package:flutter/material.dart';
 
 class UserLoaded extends StatelessWidget {
-  const UserLoaded({super.key});
+  final SteamUser steamUser;
+  const UserLoaded({
+    super.key,
+    required this.steamUser,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +39,10 @@ class UserLoaded extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SteamUserAvatar(
+                  SteamUserAvatar(
                     height: 80,
                     width: 80,
-                    imageUrl: '',
+                    imageUrl: steamUser.avatarfull,
                   ),
                   _buildUserInfo(context),
                   const Spacer(),
@@ -51,13 +56,13 @@ class UserLoaded extends StatelessWidget {
   }
 
   Widget _buildUserInfo(BuildContext context) {
-    return const SizedBox(
-      width: 100,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Name'),
-          Text('RealName'),
+          Text(steamUser.personaname ?? "Persona Name"),
+          Text(steamUser.realname ?? "Real Name"),
         ],
       ),
     );

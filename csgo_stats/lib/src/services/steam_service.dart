@@ -52,6 +52,11 @@ class SteamService {
     }
   }
 
+  Future signOutOfSteam() async {
+    // set the shared preferences to empty
+    _sharedPreferences.setString('steamUserId', '');
+  }
+
   Future<SteamUser?> signInToSteam() async {
     final launchUri = Uri.parse('https://steamcommunity.com/login/home/?goto=');
     final controller = WebViewController();
@@ -119,6 +124,7 @@ class SteamService {
 
     // securely store the user's id
     await _sharedPreferences.setString('steamUserId', steamUserId);
+    print(steamUserId);
     // get the steam user's details
     steamUser = await getSteamUser();
     return steamUser;

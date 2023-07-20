@@ -18,7 +18,7 @@ class ThemeCubit extends Cubit<ThemeData> {
     brightness: Brightness.light,
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
-      primary: Color.fromARGB(255, 233, 81, 0),
+      primary: Color.fromRGBO(0, 40, 80, 1),
       onPrimary: Color.fromARGB(255, 255, 255, 255),
       secondary: Color.fromRGBO(0, 92, 108, 1),
       onSecondary: Color.fromRGBO(255, 255, 255, 1),
@@ -113,69 +113,69 @@ class ThemeCubit extends Cubit<ThemeData> {
     textTheme: TextTheme(
       bodySmall: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       bodyMedium: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       // Body Large is used for the markdown pages paragraphs
       bodyLarge: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
         fontSize: 15,
       ),
       displayLarge: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       displayMedium: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       displaySmall: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       // Used for the markdown pages title
       headlineLarge: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
         fontSize: 22,
         fontWeight: FontWeight.bold,
       ),
       headlineMedium: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       headlineSmall: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
         fontSize: 17.0,
         fontWeight: FontWeight.bold,
       ),
       titleLarge: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       titleMedium: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
       titleSmall: GoogleFonts.getFont(
         "Raleway",
-        color: Colors.white,
+        color: Colors.black,
         wordSpacing: 0,
       ),
     ),
@@ -188,10 +188,10 @@ class ThemeCubit extends Cubit<ThemeData> {
       onSecondary: Color.fromRGBO(255, 255, 255, 1),
       error: Color.fromRGBO(255, 255, 255, 1),
       onError: Color.fromRGBO(255, 255, 255, 1),
-      background: Color.fromARGB(255, 255, 255, 255),
+      background: Color.fromARGB(255, 0, 0, 0),
       onBackground: Color.fromARGB(255, 255, 255, 255),
       surface: Color.fromARGB(255, 241, 241, 241),
-      onSurface: Color.fromRGBO(79, 80, 0, 1),
+      onSurface: Color.fromARGB(255, 0, 0, 0),
     ),
     navigationBarTheme: const NavigationBarThemeData(
       backgroundColor: Color.fromARGB(255, 1, 26, 58),
