@@ -5,7 +5,6 @@ import 'package:csgo_stats/src/blocs/app_bloc_observer.dart';
 import 'package:csgo_stats/src/firebase_admin/firebase_admin.dart';
 import 'package:csgo_stats/src/firebase_admin/src/auth/credential.dart';
 import 'package:csgo_stats/src/services/local_notification_service.dart';
-import 'package:csgo_stats/src/services/steam_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -38,7 +37,6 @@ Future main() async {
 
 Future _initializeServices() async {
   await NotificationService().initNotification();
-  SteamService.ensureInitialized();
 }
 
 Future _setupFirebase() async {

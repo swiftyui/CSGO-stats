@@ -24,8 +24,8 @@ class ThemeCubit extends Cubit<ThemeData> {
       onSecondary: Color.fromRGBO(255, 255, 255, 1),
       error: Color.fromRGBO(103, 0, 0, 1),
       onError: Color.fromRGBO(255, 255, 255, 1),
-      background: Color.fromARGB(255, 60, 37, 37),
-      onBackground: Color.fromARGB(255, 255, 255, 255),
+      background: Color.fromARGB(255, 0, 0, 0),
+      onBackground: Color.fromARGB(255, 232, 232, 232),
       surface: Color.fromARGB(255, 241, 241, 241),
       onSurface: Color.fromRGBO(0, 40, 80, 1),
     ),
@@ -197,6 +197,32 @@ class ThemeCubit extends Cubit<ThemeData> {
       backgroundColor: Color.fromARGB(255, 1, 26, 58),
       indicatorColor: Colors.white,
     ),
+  );
+
+  static const darkShimmerGradient = LinearGradient(
+    colors: [
+      Color.fromRGBO(66, 73, 93, 1),
+      Color.fromRGBO(58, 64, 82, 1),
+      Color.fromRGBO(50, 55, 70, 1),
+      Color.fromRGBO(58, 64, 82, 1),
+      Color.fromRGBO(66, 73, 93, 1),
+    ],
+    stops: [0.0, 0.2, 0.5, 0.8, 1],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const lightShimmerGradient = LinearGradient(
+    colors: [
+      Color.fromRGBO(203, 209, 212, 1),
+      Color.fromRGBO(192, 203, 208, 1),
+      Color.fromRGBO(182, 194, 199, 1),
+      Color.fromRGBO(195, 204, 208, 1),
+      Color.fromRGBO(204, 214, 217, 1),
+    ],
+    stops: [0.0, 0.2, 0.5, 0.8, 1],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
   );
 
   /// Toggles the current brightness between light and dark.

@@ -1,5 +1,7 @@
+import 'package:csgo_stats/src/blocs/steam_user_bloc/steam_user_bloc.dart';
+import 'package:csgo_stats/src/views/home_screen/steam_user_details/user_details.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,13 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('CS:GO Stats'),
         centerTitle: false,
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            Lottie.asset(
-              'assets/animations/data.json',
+            BlocProvider(
+              create: (context) => SteamUserBloc(),
+              child: const UserDetails(),
             ),
-            const Text('Coming soon....')
           ],
         ),
       ),

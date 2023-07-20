@@ -1,12 +1,14 @@
-class SteamUser {
-  late String? steamid;
-  late String? personaname;
-  late String? avatar;
-  late String? avatarmedium;
-  late String? avatarfull;
-  late String? realname;
+import 'package:equatable/equatable.dart';
 
-  SteamUser({
+class SteamUser extends Equatable {
+  final String? steamid;
+  final String? personaname;
+  final String? avatar;
+  final String? avatarmedium;
+  final String? avatarfull;
+  final String? realname;
+
+  const SteamUser({
     this.steamid,
     this.personaname,
     this.avatar,
@@ -15,12 +17,24 @@ class SteamUser {
     this.realname,
   });
 
-  SteamUser.fromJson(Map json) {
-    steamid = json['steamid'];
-    personaname = json['personaname'];
-    avatar = json['avatar'];
-    avatarmedium = json['avatarmedium'];
-    avatarfull = json['avatarfull'];
-    realname = json['realname'];
+  factory SteamUser.fromJson(Map json) {
+    return SteamUser(
+      steamid: json['steamid'],
+      personaname: json['personaname'],
+      avatar: json['avatar'],
+      avatarmedium: json['avatarmedium'],
+      avatarfull: json['avatarfull'],
+      realname: json['realname'],
+    );
   }
+
+  @override
+  List<Object?> get props => [
+        steamid,
+        personaname,
+        avatar,
+        avatarmedium,
+        avatarfull,
+        realname,
+      ];
 }

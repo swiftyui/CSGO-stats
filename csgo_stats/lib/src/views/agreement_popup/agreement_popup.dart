@@ -24,31 +24,15 @@ class _AgreementPopupState extends State<AgreementPopup> {
     return AlertDialog(
       scrollable: true,
       actionsAlignment: MainAxisAlignment.center,
-      backgroundColor: const Color.fromRGBO(27, 40, 56, 1),
-      surfaceTintColor: const Color.fromRGBO(27, 40, 56, 1),
-      title: Text(
-        'License Agreement',
-        style: GoogleFonts.getFont(
-          'Montserrat Alternates',
-          color: Theme.of(context).colorScheme.onPrimary,
-        ),
-      ),
+      title: const Text('License Agreement'),
       content: _buildBody(context),
       actions: [
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 57, 64, 73),
             elevation: 3,
           ),
           onPressed: () => Navigator.of(context).pop(true),
-          child: Text(
-            'Yes, I Agree',
-            style: GoogleFonts.getFont(
-              'Montserrat Alternates',
-              color: Theme.of(context).colorScheme.onPrimary,
-              fontSize: 18,
-            ),
-          ),
+          child: const Text('Yes, I Agree'),
         ),
       ],
     );
@@ -63,7 +47,7 @@ class _AgreementPopupState extends State<AgreementPopup> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildToggle(
+            _buildButton(
               context: context,
               title: 'EULA Agreement',
               onTap: () {
@@ -71,14 +55,14 @@ class _AgreementPopupState extends State<AgreementPopup> {
                   MaterialPageRoute(
                     builder: (context) => const AgreementDetails(
                       documentTitle: 'EULA Agreement',
-                      documentUrl: 'assets/markdownpages/eula_agreement.md',
+                      documentUrl: 'assets/markdown/eula_agreement.md',
                     ),
                   ),
                 );
               },
             ),
             const SizedBox(height: 5),
-            _buildToggle(
+            _buildButton(
               context: context,
               title: 'Steam EULA Agreement',
               onTap: () => _launchUrl(
@@ -87,7 +71,7 @@ class _AgreementPopupState extends State<AgreementPopup> {
               ),
             ),
             const SizedBox(height: 5),
-            _buildToggle(
+            _buildButton(
               context: context,
               title: 'Privacy Policy',
               onTap: () {
@@ -95,7 +79,7 @@ class _AgreementPopupState extends State<AgreementPopup> {
                   MaterialPageRoute(
                     builder: (context) => const AgreementDetails(
                       documentTitle: 'Privacy Policy',
-                      documentUrl: 'assets/markdownpages/privacy_policy.md',
+                      documentUrl: 'assets/markdown/privacy_policy.md',
                     ),
                   ),
                 );
@@ -107,26 +91,21 @@ class _AgreementPopupState extends State<AgreementPopup> {
     );
   }
 
-  Widget _buildToggle({
+  Widget _buildButton({
     required BuildContext context,
     required String title,
     required VoidCallback onTap,
   }) {
     return ListTile(
-      tileColor: const Color.fromARGB(255, 57, 64, 73),
+      tileColor: Theme.of(context).colorScheme.onBackground,
       dense: true,
       title: Text(
         title,
-        style: GoogleFonts.getFont(
-          'Montserrat Alternates',
-          color: Theme.of(context).colorScheme.onPrimary,
-          fontSize: 18,
-        ),
       ),
       onTap: onTap,
       leading: FaIcon(
         FontAwesomeIcons.fileSignature,
-        color: Theme.of(context).colorScheme.onPrimary,
+        color: Theme.of(context).colorScheme.background,
         size: 30,
       ),
     );
@@ -168,7 +147,6 @@ class _AgreementDetailsState extends State<AgreementDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      backgroundColor: const Color.fromRGBO(27, 40, 56, 1),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -176,18 +154,13 @@ class _AgreementDetailsState extends State<AgreementDetails> {
           },
           icon: const Icon(
             Icons.chevron_left,
-            color: Color.fromRGBO(152, 152, 152, 1),
             size: 40,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.onSurface,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           widget.documentTitle,
-          style: GoogleFonts.getFont(
-            'Montserrat Alternates',
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
         ),
       ),
       body: _buildBody(context),
@@ -198,15 +171,11 @@ class _AgreementDetailsState extends State<AgreementDetails> {
     return Markdown(
       data: fileData,
       styleSheet: MarkdownStyleSheet(
-        listBullet: GoogleFonts.getFont(
-          'Montserrat Alternates',
-          color: Theme.of(context).colorScheme.onPrimary,
-        ),
-        p: GoogleFonts.getFont(
-          'Montserrat Alternates',
-          color: Theme.of(context).colorScheme.onPrimary,
-        ),
-      ),
+          listBullet: GoogleFonts.getFont(
+            'Montserrat Alternates',
+            color: Theme.of(context).colorScheme.background,
+          ),
+          h1: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 20)),
     );
   }
 }

@@ -20,8 +20,8 @@ class SteamService {
     Factory(() => EagerGestureRecognizer())
   };
   late final SharedPreferences _sharedPreferences;
-  late String _steamUserId;
-  late SteamUser _steamUser;
+  String steamUserId = "";
+  late SteamUser steamUser;
 
   /// Makes sure the that the Firebase Admin Rest Service has been called for this
   /// isolate. This can safely be executed multiple times on the same isolate,
@@ -46,15 +46,13 @@ class SteamService {
 
   Future _getStoredValues() async {
     _sharedPreferences = await SharedPreferences.getInstance();
-    _steamUserId = _sharedPreferences.getString('steamUserId') ?? "";
-    if (_steamUserId.isEmpty) {
+    steamUserId = _sharedPreferences.getString('steamUserId') ?? "";
+    if (steamUserId.isEmpty) {
       return;
     }
-    // get the steam user's details
-    _steamUser = await _getSteamUser();
   }
 
-  Future<String?> signInToSteam() async {
+  Future<SteamUser?> signInToSteam() async {
     final launchUri = Uri.parse('https://steamcommunity.com/login/home/?goto=');
     final controller = WebViewController();
     await controller.setNavigationDelegate(
@@ -119,10 +117,10 @@ class SteamService {
     }
 
     // securely store the user's id
-    await _sharedPreferences.setString('steamUserId', _steamUserId);
+    await _sharedPreferences.setString('steamUserId', steamUserId);
     // get the steam user's details
-    _steamUser = await _getSteamUser();
-    return _steamUserId;
+    steamUser = await getSteamUser();
+    return steamUser;
   }
 
   Future<NavigationDecision> _onNavigationRequest(
@@ -131,7 +129,7 @@ class SteamService {
     var re = RegExp(r'(?<=profiles/)(.*)(?=/goto)');
     var match = re.firstMatch(request.url);
     if (match != null) {
-      _steamUserId = match.group(0) ?? "";
+      steamUserId = match.group(0) ?? "";
       navigatorKey.currentState!.pop();
     }
     if (request.url
@@ -143,9 +141,9 @@ class SteamService {
     return NavigationDecision.prevent;
   }
 
-  Future<SteamUser> _getSteamUser() async {
+  Future<SteamUser> getSteamUser() async {
     final uri = Uri.parse(
-        'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=$_steamWebApiKey&steamids=$_steamUserId');
+        'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=$_steamWebApiKey&steamids=$steamUserId');
 
     var httpResponse = await http.get(
       uri,
@@ -158,7 +156,8 @@ class SteamService {
         // Accessing the decoded values
         Map<String, dynamic> response = data['response'];
         List<dynamic> players = response['players'];
-        return SteamUser.fromJson(players[0]);
+        steamUser = SteamUser.fromJson(players[0]);
+        return steamUser;
       } catch (e) {
         if (kDebugMode) {
           print(e);
