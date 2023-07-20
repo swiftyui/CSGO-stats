@@ -1,6 +1,7 @@
 import 'package:csgo_stats/src/blocs/steam_user_bloc/steam_user_bloc.dart';
 import 'package:csgo_stats/src/views/home_screen/steam_user_details/initial_user.dart';
 import 'package:csgo_stats/src/views/home_screen/steam_user_details/loading_user.dart';
+import 'package:csgo_stats/src/views/home_screen/steam_user_details/user_loaded.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,11 +28,7 @@ class _UserDetailsState extends State<UserDetails> {
       } else if (state is SteamUserLoading) {
         return const LoadingSteamUser();
       } else if (state is SteamUserLoaded) {
-        return Container(
-          width: 200,
-          height: 200,
-          color: Colors.green,
-        );
+        return const UserLoaded();
       } else if (state is SteamUserError) {
         return const InitialSteamUser();
       } else {
