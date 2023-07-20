@@ -33,17 +33,9 @@ class _UserDetailsState extends State<UserDetails> {
           color: Colors.green,
         );
       } else if (state is SteamUserError) {
-        return Container(
-          width: 200,
-          height: 200,
-          color: Colors.red,
-        );
+        return const InitialSteamUser();
       } else {
-        return Container(
-          width: 200,
-          height: 200,
-          color: Colors.red,
-        );
+        return const InitialSteamUser();
       }
     });
   }
